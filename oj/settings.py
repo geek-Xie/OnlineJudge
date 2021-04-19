@@ -73,7 +73,8 @@ ROOT_URLCONF = 'oj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # 'DIRS': [],
+        'DIRS': ['/home/ojadmin/OJSource/OnlineJudgeFE/dist'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,7 +135,8 @@ AVATAR_UPLOAD_DIR = f"{DATA_DIR}{AVATAR_URI_PREFIX}"
 UPLOAD_PREFIX = "/public/upload"
 UPLOAD_DIR = f"{DATA_DIR}{UPLOAD_PREFIX}"
 
-STATICFILES_DIRS = [os.path.join(DATA_DIR, "public")]
+# STATICFILES_DIRS = [os.path.join(DATA_DIR, "public")]
+STATICFILES_DIRS = [os.path.join(DATA_DIR, "/home/ojadmin/OJSource/OnlineJudgeFE/dist/static")]
 
 
 LOGGING_HANDLERS = ['console', 'sentry'] if production_env else ['console']

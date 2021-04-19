@@ -1,6 +1,8 @@
 from django.conf.urls import include, url
+from django.views.generic import TemplateView
 
 urlpatterns = [
+    url("", TemplateView.as_view(template_name='index.html')),
     url(r"^api/", include("account.urls.oj")),
     url(r"^api/admin/", include("account.urls.admin")),
     url(r"^api/", include("announcement.urls.oj")),
