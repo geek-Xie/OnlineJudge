@@ -1,4 +1,6 @@
+import logging
 import os
+import sys
 from datetime import timedelta
 from importlib import import_module
 
@@ -26,7 +28,7 @@ from ..serializers import (ApplyResetPasswordSerializer, ResetPasswordSerializer
 from ..serializers import (TwoFactorAuthCodeSerializer, UserProfileSerializer,
                            EditUserProfileSerializer, ImageUploadForm)
 from ..tasks import send_email_async
-
+logger = logging.getLogger("")
 
 class UserProfileAPI(APIView):
     @method_decorator(ensure_csrf_cookie)
@@ -137,7 +139,7 @@ class TwoFactorAuthAPI(APIView):
 
 class CheckTFARequiredAPI(APIView):
     @validate_serializer(UsernameOrEmailCheckSerializer)
-    def post(self, request):
+    def get(self, request):
         """
         Check TFA is required
         """
@@ -154,7 +156,8 @@ class CheckTFARequiredAPI(APIView):
 
 class UserLoginAPI(APIView):
     @validate_serializer(UserLoginSerializer)
-    def post(self, request):
+    def get(self, request):
+        # sys.stdout.write('login_ok' + "\n")
         """
         User login api
         """
