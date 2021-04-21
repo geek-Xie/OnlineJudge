@@ -178,7 +178,8 @@ LOGGING = {
             'propagate': False,
         },
        '': {
-           'handlers': LOGGING_HANDLERS,
+           # 'handlers': LOGGING_HANDLERS,
+            'handlers': ['console'],
            'level': 'WARNING',
            'propagate': True,
        }

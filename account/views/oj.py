@@ -28,7 +28,7 @@ from ..serializers import (ApplyResetPasswordSerializer, ResetPasswordSerializer
 from ..serializers import (TwoFactorAuthCodeSerializer, UserProfileSerializer,
                            EditUserProfileSerializer, ImageUploadForm)
 from ..tasks import send_email_async
-logger = logging.getLogger("")
+logger = logging.getLogger(__name__)
 
 class UserProfileAPI(APIView):
     @method_decorator(ensure_csrf_cookie)
